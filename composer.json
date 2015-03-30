@@ -1,8 +1,16 @@
 {
-  "require-dev" : {
+  "name"       : "rasmusdencker/simple-expressions",
+  "description": "Simple extendable expression language",
+  "authors"    : [
+    {
+      "name" : "Rasmus Dencker",
+      "email": "rd@firtal.com"
+    }
+  ],
+  "require-dev": {
     "phpspec/phpspec": "~2.1"
   },
-  "autoload": {
+  "autoload"   : {
     "psr-4": {
       "Dencker\\SimpleExpressions\\": "src/"
     }
