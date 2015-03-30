@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\App;
+namespace spec\Dencker\SimpleExpressions;
 
 use App\Context;
 use PhpSpec\ObjectBehavior;

@@ -1,4 +1,4 @@
 suites:
   main:
-    psr4_prefix: App\
-    namespace: App
+    psr4_prefix: Dencker\SimpleExpressions
+    namespace: Dencker\SimpleExpressions
