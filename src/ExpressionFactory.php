@@ -1,27 +1,40 @@
-<?php  namespace Dencker\SimpleExpressions;
+<?php namespace Dencker\SimpleExpressions;
 
-class ExpressionFactory {
+use Dencker\SimpleExpressions\Expressions\AbstractExpression;
+
+class ExpressionFactory
+{
+
+    protected static $expression_stack = [];
 
     public function solve($context)
     {
         $context = new Context( $context );
 
-        $expression_stack = [
-            new NumericExpression,
-            new BooleanExpression,
-            new LiteralExpression,
-            new EqualsExpression,
-            new AndExpression,
-            new OrExpression,
-        ];
-
         /** @var AbstractExpression $exp */
-        foreach ($expression_stack as $exp)
+        foreach (self::$expression_stack as $exp)
         {
             $exp->interpret( $context );
         }
 
         return $context->solve();
 
+    }
+
+    public static function extend($expressions)
+    {
+        if ( !is_array( $expressions ) )
+        {
+            $expressions = [$expressions];
+        }
+
+        foreach ($expressions as $expression)
+        {
+            if ( !$expression instanceof AbstractExpression )
+            {
+                throw new \Exception( 'Expression must extend AbstractExpression' );
+            }
+            self::$expression_stack[] = $expression;
+        }
     }
 }

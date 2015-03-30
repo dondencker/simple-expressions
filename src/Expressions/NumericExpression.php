@@ -1,5 +1,7 @@
 <?php namespace Dencker\SimpleExpressions\Expressions;
 
+use Dencker\SimpleExpressions\Context;
+
 class NumericExpression extends AbstractExpression
 {
 

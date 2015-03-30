@@ -1,5 +1,7 @@
 <?php namespace Dencker\SimpleExpressions\Expressions;
 
+use Dencker\SimpleExpressions\Context;
+
 class BooleanExpression extends AbstractExpression{
 
     protected function regex()
