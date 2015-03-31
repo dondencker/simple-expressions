@@ -1,6 +1,7 @@
 <?php  namespace Dencker\SimpleExpressions; 
 
 use Dencker\SimpleExpressions\Expressions\AndExpression;
+use Dencker\SimpleExpressions\Expressions\BooleanExpression;
 use Dencker\SimpleExpressions\Expressions\ContainsExpression;
 use Dencker\SimpleExpressions\Expressions\EqualsExpression;
 use Dencker\SimpleExpressions\Expressions\LiteralExpression;
@@ -14,8 +15,11 @@ class SimpleExpressionServiceProvider {
         ExpressionFactory::extendSingleton([
            new NumericExpression,
            new LiteralExpression,
+           new BooleanExpression,
+
            new EqualsExpression,
            new ContainsExpression,
+
            new AndExpression,
            new OrExpression
         ]);
