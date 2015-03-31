@@ -11,13 +11,13 @@ class SimpleExpressionServiceProvider {
 
     public function register()
     {
-        ExpressionFactory::extend([
+        ExpressionFactory::extendSingleton([
            new NumericExpression,
            new LiteralExpression,
            new EqualsExpression,
            new ContainsExpression,
            new AndExpression,
-           new OrExpression,
+           new OrExpression
         ]);
     }
 
