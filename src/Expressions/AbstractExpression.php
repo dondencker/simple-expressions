@@ -2,7 +2,7 @@
 
 use Dencker\SimpleExpressions\Context;
 
-abstract class AbstractExpression
+abstract class AbstractExpression implements ExpressionContract
 {
     protected $matches;
 
